@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mela Mahani | 122290072</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container fade-in">
+        <h1>Prediksi Curah Hujan Menggunakan Metode Runge-Kutta Orde 2 (RK2)</h1>
+        
+        <section id="location-date" class="fade-in delay-1">
+            <h2>Informasi Prediksi</h2>
+            <p><strong>Daerah Prediksi:</strong> <span id="location">[Nama Daerah]</span></p>
+            <p><strong>Tanggal Prediksi:</strong> <span id="date">[Tanggal]</span></p>
+        </section>
+
+        <section id="introduction" class="fade-in delay-2">
+            <h2>Pengenalan Metode RK2</h2>
+            <p>
+                Metode Runge-Kutta orde 2 (RK2) adalah salah satu metode numerik untuk menyelesaikan persamaan diferensial. Metode ini lebih akurat dibandingkan metode Euler karena menggunakan dua estimasi untuk kemiringan (slope) pada setiap langkah.
+            </p>
+            <h3>Rumus Metode RK2</h3>
+            <p>
+                Persamaan umum RK2:
+            </p>
+            <pre>
+k1 = f(t_n, y_n)
+k2 = f(t_n + h, y_n + h * k1)
+y_{n+1} = y_n + (h/2) * (k1 + k2)
+            </pre>
+            <p>
+                Di mana:
+                <ul>
+                    <li>t<sub>n</sub>: waktu saat ini</li>
+                    <li>y<sub>n</sub>: nilai fungsi saat ini</li>
+                    <li>h: langkah waktu</li>
+                    <li>f(t, y): fungsi diferensial</li>
+                </ul>
+            </p>
+        </section>
+
+        <section id="application" class="fade-in delay-3">
+            <h2>Penerapan pada Prediksi Curah Hujan</h2>
+            <p>
+                Untuk prediksi curah hujan, kita dapat memodelkan perubahan curah hujan harian sebagai suatu proses dinamis. Misalnya, kita bisa mengasumsikan bahwa curah hujan hari berikutnya dipengaruhi oleh curah hujan hari ini dan tren perubahan sebelumnya.
+            </p>
+        </section>
+
+        <section id="simulation" class="fade-in delay-4">
+            <h2>Simulasi dan Prediksi</h2>
+            <canvas id="rainChart"></canvas>
+            <div id="loader" class="loader">Memuat data...</div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
